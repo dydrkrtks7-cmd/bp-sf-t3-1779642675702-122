@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-raw-concrete">
+    <meta name="description" content="화곡 셔츠룸 블로그 - AI 트렌드로 변화하는 셔츠룸 문화, 마포 화곡동 셔츠룸 이야기">
+    <meta name="keywords" content="화곡 셔츠룸, 화곡동 셔츠룸, 마포 셔츠룸, AI 트렌드 셔츠룸, 셔츠룸 블로그, 셔츠룸 이야기">
+    <meta property="og:title" content="화곡 셔츠룸 블로그 | AI 트렌드 마포 셔츠룸">
+    <meta property="og:description" content="화곡 셔츠룸의 진짜 이야기. AI 트렌드가 바꾼 셔츠룸 문화, 현장에서 느낀 생생한 후기">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sf-trendy-shirtroom.com/blog">
+    <title>블로그 | 화곡 셔츠룸 AI 트렌드 마포 셔츠룸</title>
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Pretendard', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #1a1a1a;
+            color: #e0e0e0;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        a {
+            color: #ff6b35;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        a:hover {
+            color: #ff8c5a;
+            text-decoration: underline;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            border-left: 6px solid #ff6b35;
+            padding-left: 1rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.75rem;
+            margin-top: 2rem;
+        }
+        h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            margin-top: 1.5rem;
+        }
+        p {
+            margin-bottom: 1rem;
+        }
+        .small-text {
+            font-size: 0.85rem;
+            color: #888;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            position: relative;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1.4rem;
+            }
+        }
+        nav {
+            background: #222;
+            padding: 1rem 0;
+            border-bottom: 3px solid #ff6b35;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo a {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #ff6b35;
+            text-transform: uppercase;
+        }
+        .logo a:hover {
+            text-decoration: none;
+            color: #ff8c5a;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #ccc;
+            padding: 0.3rem 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        .nav-links a:hover {
+            color: #ff6b35;
+            border-bottom-color: #ff6b35;
+            text-decoration: none;
+        }
+        .nav-links a.active {
+            color: #ff6b35;
+            border-bottom-color: #ff6b35;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            padding: 5px;
+        }
+        .hamburger span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background: #ff6b35;
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #222;
+                flex-direction: column;
+                padding: 1rem 0;
+                gap: 0;
+                border-bottom: 3px solid #ff6b35;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .nav-links a {
+                display: block;
+                padding: 0.8rem 1.5rem;
+                border-bottom: 1px solid #333;
+                text-align: center;
+            }
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
+            .tel-link-mobile {
+                display: block;
+                background: #ff6b35;
+                color: #1a1a1a !important;
+                font-weight: 700;
+                margin: 0.5rem 1rem;
+                padding: 0.8rem !important;
+                border-radius: 4px;
+                border: none !important;
+                text-align: center;
+            }
+            .tel-link-mobile:hover {
+                background: #ff8c5a;
+            }
+        }
+        .tel-link {
+            display: inline-block;
+            background: #ff6b35;
+            color: #1a1a1a !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: background 0.2s;
+        }
+        .tel-link:hover {
+            background: #ff8c5a;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .tel-link {
+                display: none;
+            }
+        }
+        .hero {
+            padding: 3rem 0 2rem;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            border-bottom: 2px solid #333;
+        }
+        .hero h1 {
+            color: #fff;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: #aaa;
+            max-width: 700px;
+        }
+        .blog-post {
+            padding: 2rem 0 4rem;
+        }
+        .post-meta {
+            display: flex;
+            gap: 1.5rem;
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .post-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .post-content {
+            max-width: 800px;
+        }
+        .post-content p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #d0d0d0;
+        }
+        .post-content .highlight-box {
+            background: #2a2a2a;
+            border-left: 4px solid #ff6b35;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+        .post-content ul {
+            margin: 1rem 0 1.5rem 1.5rem;
+            color: #d0d0d0;
+        }
+        .post-content ul li {
+            margin-bottom: 0.5rem;
+            list-style-type: square;
+        }
+        .post-content strong {
+            color: #ff6b35;
+        }
+        .cta-section {
+            background: #2a2a2a;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-radius: 4px;
+            border: 1px solid #333;
+            text-align: center;
+        }
+        .cta-section h3 {
+            margin-top: 0;
+            color: #fff;
+        }
+        .cta-section .tel-link {
+            margin-top: 1rem;
+            font-size: 1.1rem;
+            padding: 0.7rem 2rem;
+        }
+        footer {
+            background: #111;
+            padding: 2rem 0;
+            border-top: 2px solid #333;
+            text-align: center;
+            color: #666;
+            font-size: 0.85rem;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #333;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container nav-inner">
+            <div class="logo">
+                <a href="/">화곡 셔츠룸</a>
+            </div>
+            <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/">홈</a></li>
+                <li><a href="/about">소개</a></li>
+                <li><a href="/blog" class="active">블로그</a></li>
+                <li><a href="/contact">문의</a></li>
+                <li><a href="tel:01062790862" class="tel-link-mobile">📞 010-6279-0862</a></li>
+            </ul>
+            <a href="tel:01062790862" class="tel-link">📞 010-6279-0862</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>블로그</h1>
+            <p>화곡 셔츠룸의 진짜 이야기. AI 트렌드부터 현장 꿀팁까지, 형들이 직접 써내려가는 리얼 토크.</p>
+        </div>
+    </section>
+
+    <section class="blog-post">
+        <div class="container">
+            <article class="post-content">
+                <div class="post-meta">
+                    <span>📅 2025년 3월 15일</span>
+                    <span>✍️ 운영팀</span>
+                    <span>🏷️ AI 트렌드 · 셔츠룸 이야기</span>
+                </div>
+                <h2>AI 트렌드가 바꾼 셔츠룸, 화곡동에서 직접 겪은 썰 푼다</h2>
+                
+                <p>야, 형들. 요즘 화곡 셔츠룸 scene에 완전 새로운 바람이 불고 있어. 내가 이 동네에서 3년째 일하고 있는데, 진짜 작년까지만 해도 "셔츠룸에 AI가 무슨 상관이야" 싶었거든. 근데 막상 써보니까 이게 왠일? 완전 게임 체인저야.</p>
+                
+                <p>처음에 우리 사장님이 "AI 도입한다"고 했을 때 다들 반신반의했어. "야, 우리가 무슨 카이스트도 아니고" 하면서 말이지. 근데 막상 시스템 깔리고 나니까 손님들 반응이 확 달라졌어. 특히 <strong>화곡동 셔츠룸</strong> 특유의 빠른 템포랑 AI 매칭이 찰떡궁합이더라고.</p>
+
+                <div class="highlight-box">
+                    <strong>💡 핵심 포인트:</strong> AI가 추천해주는 코스가 생각보다 정확해. 손님이 전에 왔던 기록, 선호 스타일, 심지어 분위기까지 분석해서 맞춤 제안을 해주니까 만족도가 확 올라갔어. 나도 처음엔 "기계가 사람 맘을 알겠어?" 했는데, 데이터를 보니 할 말이 없더라.
+                </div>
+
+                <h3>실제로 어떻게 달라졌냐면</h3>
+                <p>예를 들어볼게. 지난주 금요일에 단골 형님이 오셨는데, 평소랑 좀 다른 분위기를 원하시는 거야. 예전 같았으면 "형, 오늘은 어떠세요?" 하면서 감으로 때려맞혀야 했는데, 지금은 AI가 이전 방문 기록 + 요일별 트렌드 + 최근 인기 코스 정보를 종합해서 바로 추천해줘. 덕분에 형님 완전 만족하시고 "야, 여기 완전 잘 변했네" 하시더라.</p>
+
+                <p>또 하나 재밌는 건, <strong>화곡 셔츠룸</strong>의 AI 시스템이 실시간으로 인기 코스를 업데이트한다는 거야. 예전에는 "오늘은 어떤 코스가 잘 나가요?" 하고 물어보면 사람이 일일이 기억해야 했는데, 지금은 대시보드만 보면 한눈에 보여. 이거 완전 꿀이야.</p>
+
+                <h3>형들이 꼭 알아둬야 할 점</h3>
+                <ul>
+                    <li>AI는 완벽하지 않아. 그래도 80%는 맞춰주니까 나머지 20%는 우리 스탭들이 채워줌</li>
+                    <li>시스템이 생겼다고 사람이 필요 없는 건 절대 아냐. 오히려 더 세심한 케어가 가능해짐</li>
+                    <li>초보 손님들도 AI 추천 덕분에 부담 없이 코스 선택 가능. "뭐가 좋을지 모르겠어" 하는 분들한테 딱이야</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <strong>🔥 진짜 꿀팁:</strong> 화곡동 셔츠룸에서 처음 가보는 형들은 AI 추천 '베스트 코스'를 선택해봐. 후회 안 할 거야. 나도 주변 지인들한테 무조건 그렇게 추천하고 있어. 그리고 전화 예약할 때 "AI 코스로 부탁해요" 하면 더 빠르게 준비 가능!
+                </div>
+
+                <p>사실 처음에는 "기계가 사람 감성을 대체할 수 있을까?" 하는 의문이 있었어. 근데 써보니까 AI는 도구일 뿐이더라. 진짜 중요한 건 여전히 사람이야. AI가 데이터를 주면, 우리가 그걸 바탕으로 더 따뜻한 서비스를 만드는 거지. <strong>화곡 셔츠룸</strong>이 추구하는 방향이 딱 그거야. 기술로 편의를 높이고, 사람으로 감동을 주는 것.</p>
+
+                <p>마지막으로 형들한테 당부할 게 있어. 요즘 화곡동 셔츠룸 scene이 진짜 빠르게 변하고 있거든. AI 트렌드에 뒤처지지 않으려면 직접 경험해보는 게 최고야. 우리 가게 한번 들러봐. 커피 한잔 하면서 시스템 구경도 하고, 형들이 원하는 스타일로 편하게 즐길 수 있게 도와줄게. 전화번호는 항상 열려있어. 010-6279-0862로 언제든지 연락해!</p>
+
+                <div class="cta-section">
+                    <h3>직접 경험해보고 싶다면?</h3>
+                    <p>AI 트렌드로 업그레이드된 화곡 셔츠룸, 지금 바로 전화주세요!</p>
+                    <a href="tel:01062790862" class="tel-link">📞 010-6279-0862</a>
+                    <p class="small-text" style="margin-top: 1rem; color: #888;">상담은 언제나 환영입니다. 부담 없이 걸어주세요 형들!</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <footer>
+</body>
+</html>
